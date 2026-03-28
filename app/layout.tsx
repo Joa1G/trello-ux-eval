@@ -9,7 +9,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Avaliação de UX — Trello | IHC 2026-1',
+  title: 'Teste de Usabilidade — Trello | IHC 2026-1',
   description:
     'Plataforma de formulários para teste de usabilidade do Trello — Interação Humano-Computador (IFAM 2026-1)',
 }
