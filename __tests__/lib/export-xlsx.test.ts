@@ -11,6 +11,9 @@ function createMockState(): FormState {
       perfil: 'novato',
       data: '2026-03-28',
       idade: '22',
+      genero: 'masculino',
+      profissao: 'Estudante',
+      escolaridade: 'superior_incompleto',
       frequencia: 'nunca',
     },
     emocards: {
@@ -73,7 +76,10 @@ describe('Exportação .xlsx', () => {
     expect(data[2]).toEqual(['Perfil', 'novato'])
     expect(data[3]).toEqual(['Data', '2026-03-28'])
     expect(data[4]).toEqual(['Idade', '22'])
-    expect(data[5]).toEqual(['Frequência de uso do Trello', 'nunca'])
+    expect(data[5]).toEqual(['Gênero', 'masculino'])
+    expect(data[6]).toEqual(['Profissão/Ocupação', 'Estudante'])
+    expect(data[7]).toEqual(['Escolaridade', 'superior_incompleto'])
+    expect(data[8]).toEqual(['Frequência de uso do Trello', 'nunca'])
   })
 
   it('aba EmoCards deve ter 6 linhas de dados (T1-T5 + Geral)', () => {

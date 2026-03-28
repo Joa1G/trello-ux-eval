@@ -183,6 +183,9 @@ describe('Zustand Store', () => {
         perfil: 'novato',
         data: '2026-03-27',
         idade: '',
+        genero: 'masculino',
+        profissao: '',
+        escolaridade: 'superior_incompleto',
         frequencia: 'nunca',
       }
       expect(isParticipantComplete(p)).toBe(true)

@@ -114,6 +114,119 @@ export default function ParticipantForm() {
             />
           </div>
 
+          {/* Gênero */}
+          <fieldset className="space-y-3">
+            <legend className="text-sm font-medium text-foreground">
+              Gênero <span className="text-red-400">*</span>
+            </legend>
+            <div className="flex flex-wrap gap-3">
+              {([
+                { value: 'masculino' as const, label: 'Masculino' },
+                { value: 'feminino' as const, label: 'Feminino' },
+                { value: 'outro' as const, label: 'Outro' },
+                { value: 'prefiro_nao_dizer' as const, label: 'Prefiro não dizer' },
+              ]).map((option) => (
+                <label
+                  key={option.value}
+                  className={`flex cursor-pointer items-center gap-2 rounded-lg border px-4 py-3 text-sm transition-all ${
+                    participant.genero === option.value
+                      ? 'border-sus bg-sus/5 text-sus'
+                      : 'border-foreground/10 text-foreground/60 hover:border-foreground/20'
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="genero"
+                    aria-label={`Gênero: ${option.label}`}
+                    value={option.value}
+                    checked={participant.genero === option.value}
+                    onChange={() => setParticipant({ genero: option.value })}
+                    className="sr-only"
+                  />
+                  <div
+                    className={`h-4 w-4 rounded-full border-2 transition-colors ${
+                      participant.genero === option.value
+                        ? 'border-sus bg-sus'
+                        : 'border-foreground/20'
+                    }`}
+                  >
+                    {participant.genero === option.value && (
+                      <div className="flex h-full items-center justify-center">
+                        <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                      </div>
+                    )}
+                  </div>
+                  {option.label}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          {/* Profissão/Ocupação */}
+          <div className="space-y-2">
+            <label htmlFor="profissao" className="block text-sm font-medium text-foreground">
+              Profissão / Ocupação <span className="text-foreground/30">(opcional)</span>
+            </label>
+            <input
+              id="profissao"
+              type="text"
+              aria-label="Profissão ou ocupação do participante"
+              placeholder="Ex: Estudante, Designer, Desenvolvedor..."
+              value={participant.profissao}
+              onChange={(e) => setParticipant({ profissao: e.target.value })}
+              className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-foreground/30 focus:border-sus focus:outline-none focus:ring-2 focus:ring-sus/20"
+            />
+          </div>
+
+          {/* Nível de Escolaridade */}
+          <fieldset className="space-y-3">
+            <legend className="text-sm font-medium text-foreground">
+              Nível de Escolaridade <span className="text-red-400">*</span>
+            </legend>
+            <div className="flex flex-wrap gap-3">
+              {([
+                { value: 'fundamental' as const, label: 'Ensino Fundamental' },
+                { value: 'medio' as const, label: 'Ensino Médio' },
+                { value: 'superior_incompleto' as const, label: 'Superior Incompleto' },
+                { value: 'superior_completo' as const, label: 'Superior Completo' },
+                { value: 'pos_graduacao' as const, label: 'Pós-graduação' },
+              ]).map((option) => (
+                <label
+                  key={option.value}
+                  className={`flex cursor-pointer items-center gap-2 rounded-lg border px-4 py-3 text-sm transition-all ${
+                    participant.escolaridade === option.value
+                      ? 'border-sus bg-sus/5 text-sus'
+                      : 'border-foreground/10 text-foreground/60 hover:border-foreground/20'
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    name="escolaridade"
+                    aria-label={`Escolaridade: ${option.label}`}
+                    value={option.value}
+                    checked={participant.escolaridade === option.value}
+                    onChange={() => setParticipant({ escolaridade: option.value })}
+                    className="sr-only"
+                  />
+                  <div
+                    className={`h-4 w-4 rounded-full border-2 transition-colors ${
+                      participant.escolaridade === option.value
+                        ? 'border-sus bg-sus'
+                        : 'border-foreground/20'
+                    }`}
+                  >
+                    {participant.escolaridade === option.value && (
+                      <div className="flex h-full items-center justify-center">
+                        <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                      </div>
+                    )}
+                  </div>
+                  {option.label}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
           {/* Frequência de uso */}
           <fieldset className="space-y-3">
             <legend className="text-sm font-medium text-foreground">

@@ -12,6 +12,9 @@ export function generateXlsx(state: FormState): XLSX.WorkBook {
     ['Perfil', state.participant.perfil],
     ['Data', state.participant.data],
     ['Idade', state.participant.idade || 'Não informado'],
+    ['Gênero', state.participant.genero || 'Não informado'],
+    ['Profissão/Ocupação', state.participant.profissao || 'Não informado'],
+    ['Escolaridade', state.participant.escolaridade || 'Não informado'],
     ['Frequência de uso do Trello', state.participant.frequencia],
   ]
   const wsParticipante = XLSX.utils.aoa_to_sheet(participanteData)

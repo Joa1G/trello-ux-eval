@@ -19,6 +19,9 @@ export interface ParticipantData {
   perfil: 'novato' | 'experiente' | ''
   data: string
   idade: string
+  genero: 'masculino' | 'feminino' | 'outro' | 'prefiro_nao_dizer' | ''
+  profissao: string
+  escolaridade: 'fundamental' | 'medio' | 'superior_incompleto' | 'superior_completo' | 'pos_graduacao' | ''
   frequencia: 'nunca' | 'raramente' | 'regularmente' | ''
 }
 
@@ -80,7 +83,7 @@ export interface FormState {
 // ===== SELETORES DERIVADOS =====
 
 export function isParticipantComplete(p: ParticipantData): boolean {
-  return p.identificador.trim() !== '' && p.perfil !== '' && p.data !== '' && p.frequencia !== ''
+  return p.identificador.trim() !== '' && p.perfil !== '' && p.data !== '' && p.genero !== '' && p.escolaridade !== '' && p.frequencia !== ''
 }
 
 export function isEmocardsComplete(emocards: Partial<Record<ColetaId, EmoCardResponse>>): boolean {
@@ -134,6 +137,9 @@ const initialState = {
     perfil: '' as const,
     data: today,
     idade: '',
+    genero: '' as const,
+    profissao: '',
+    escolaridade: '' as const,
     frequencia: '' as const,
   },
   emocards: {},
