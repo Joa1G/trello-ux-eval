@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FACE_COMPONENTS } from './faces'
+import { FACE_IMAGES } from './faces'
 import type { CategoriaEmoCard } from '@/lib/constants'
 
 interface EmoCardProps {
@@ -11,7 +11,7 @@ interface EmoCardProps {
 }
 
 export default function EmoCard({ categoria, isSelected, onSelect }: EmoCardProps) {
-  const FaceComponent = FACE_COMPONENTS[categoria.numero]
+  const imageSrc = FACE_IMAGES[categoria.numero]
 
   return (
     <motion.button
@@ -28,7 +28,12 @@ export default function EmoCard({ categoria, isSelected, onSelect }: EmoCardProp
       }`}
     >
       <div className="h-20 w-16">
-        <FaceComponent className="h-full w-full" />
+        <img
+          src={imageSrc}
+          alt={`Rosto ${categoria.nomePT}`}
+          className="h-full w-full object-contain"
+          draggable={false}
+        />
       </div>
       <div className="space-y-0.5 text-center">
         <p className={`text-xs font-semibold ${isSelected ? 'text-sus' : 'text-foreground/80'}`}>
