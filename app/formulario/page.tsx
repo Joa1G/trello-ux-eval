@@ -10,6 +10,7 @@ import EmoCardsSection from '@/components/emocards/EmoCardsSection'
 import SusSection from '@/components/sus/SusSection'
 import AttrakDiffSection from '@/components/attrakdiff/AttrakDiffSection'
 import JourneyMapSection from '@/components/journeymap/JourneyMapSection'
+import ExportScreen from '@/components/export/ExportScreen'
 
 const stepVariants = {
   enter: (direction: number) => ({
@@ -24,14 +25,6 @@ const stepVariants = {
     x: direction > 0 ? -80 : 80,
     opacity: 0,
   }),
-}
-
-function StepPlaceholder({ name }: { name: string }) {
-  return (
-    <div className="flex min-h-[40vh] items-center justify-center rounded-2xl border border-dashed border-foreground/10 bg-card">
-      <p className="text-foreground/40">{name} — em construção</p>
-    </div>
-  )
 }
 
 export default function FormularioPage() {
@@ -66,7 +59,7 @@ export default function FormularioPage() {
     <SusSection key="sus" />,
     <AttrakDiffSection key="attrakdiff" />,
     <JourneyMapSection key="journeymap" />,
-    <StepPlaceholder key="export" name="Download" />,
+    <ExportScreen key="export" />,
   ]
 
   return (
@@ -102,14 +95,15 @@ export default function FormularioPage() {
         </motion.div>
       </AnimatePresence>
 
-      <WizardNavButtons
-        onNext={handleNext}
-        onPrev={handlePrev}
-        canGoNext={canGoNext}
-        canGoPrev={currentStep > 0}
-        isLastStep={currentStep === 5}
-        nextLabel={currentStep === 5 ? 'Concluir' : 'Próximo'}
-      />
+      {currentStep < 5 && (
+        <WizardNavButtons
+          onNext={handleNext}
+          onPrev={handlePrev}
+          canGoNext={canGoNext}
+          canGoPrev={currentStep > 0}
+          nextLabel="Próximo"
+        />
+      )}
     </div>
   )
 }
