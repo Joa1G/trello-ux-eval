@@ -228,7 +228,7 @@ describe('Zustand Store', () => {
         useFormStore.getState().setJourneyResponse(id, {
           sentimento: 'positiva',
           nota: 4,
-          comentario: '',
+          comentario: 'Experiência satisfatória',
         })
       })
       expect(isJourneyMapComplete(useFormStore.getState().journeymap)).toBe(true)
