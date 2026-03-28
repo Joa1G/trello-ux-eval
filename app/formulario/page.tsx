@@ -28,13 +28,12 @@ const stepVariants = {
 }
 
 export default function FormularioPage() {
-  const currentStep = useFormStore((s) => s.currentStep)
-  const nextStep = useFormStore((s) => s.nextStep)
-  const prevStep = useFormStore((s) => s.prevStep)
+  const store = useFormStore()
+  const { currentStep, nextStep, prevStep } = store
   const [direction, setDirection] = useState(0)
   const [validationError, setValidationError] = useState('')
 
-  const canGoNext = isStepComplete(currentStep, useFormStore.getState())
+  const canGoNext = isStepComplete(currentStep, store)
 
   const handleNext = () => {
     if (!canGoNext) {
