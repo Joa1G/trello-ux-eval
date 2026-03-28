@@ -105,7 +105,7 @@ export function isJourneyMapComplete(
 ): boolean {
   return COLETAS_IDS.every((id) => {
     const r = journeymap[id]
-    return r !== undefined && r.sentimento !== '' && r.nota !== null && r.comentario.trim() !== ''
+    return r !== undefined && r.sentimento !== '' && r.nota !== null
   })
 }
 

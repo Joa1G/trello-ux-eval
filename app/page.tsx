@@ -17,7 +17,7 @@ export default function Home() {
             Interação Humano-Computador — IFAM 2026-1
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Avaliação de UX
+            Teste de Usabilidade
           </h1>
           <h2 className="text-2xl font-semibold text-sus sm:text-3xl">
             Trello (Web)
@@ -27,8 +27,7 @@ export default function Home() {
         <p className="mx-auto max-w-lg text-lg leading-relaxed text-foreground/70">
           Você participará de um teste de usabilidade do Trello.
           Após realizar as tarefas propostas, preencha os formulários de
-          avaliação a seguir. O processo leva aproximadamente{' '}
-          <strong className="text-foreground">15–20 minutos</strong>.
+          avaliação a seguir.
         </p>
 
         <div className="space-y-4">
