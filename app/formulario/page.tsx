@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useFormStore, isStepComplete } from '@/lib/store'
 import FormStepper from '@/components/stepper/FormStepper'
 import WizardNavButtons from '@/components/ui/WizardNavButtons'
+import ParticipantForm from '@/components/participant/ParticipantForm'
 
 const stepVariants = {
   enter: (direction: number) => ({
@@ -56,7 +57,7 @@ export default function FormularioPage() {
   }
 
   const steps = [
-    <StepPlaceholder key="participante" name="Dados do Participante" />,
+    <ParticipantForm key="participante" />,
     <StepPlaceholder key="emocards" name="EmoCards" />,
     <StepPlaceholder key="sus" name="SUS" />,
     <StepPlaceholder key="attrakdiff" name="AttrakDiff" />,
