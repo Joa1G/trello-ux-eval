@@ -9,6 +9,7 @@ import ParticipantForm from '@/components/participant/ParticipantForm'
 import EmoCardsSection from '@/components/emocards/EmoCardsSection'
 import SusSection from '@/components/sus/SusSection'
 import AttrakDiffSection from '@/components/attrakdiff/AttrakDiffSection'
+import JourneyMapSection from '@/components/journeymap/JourneyMapSection'
 
 const stepVariants = {
   enter: (direction: number) => ({
@@ -64,7 +65,7 @@ export default function FormularioPage() {
     <EmoCardsSection key="emocards" />,
     <SusSection key="sus" />,
     <AttrakDiffSection key="attrakdiff" />,
-    <StepPlaceholder key="journeymap" name="User Journey Map" />,
+    <JourneyMapSection key="journeymap" />,
     <StepPlaceholder key="export" name="Download" />,
   ]
 
