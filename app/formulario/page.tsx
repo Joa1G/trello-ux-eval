@@ -7,6 +7,7 @@ import FormStepper from '@/components/stepper/FormStepper'
 import WizardNavButtons from '@/components/ui/WizardNavButtons'
 import ParticipantForm from '@/components/participant/ParticipantForm'
 import EmoCardsSection from '@/components/emocards/EmoCardsSection'
+import SusSection from '@/components/sus/SusSection'
 
 const stepVariants = {
   enter: (direction: number) => ({
@@ -60,7 +61,7 @@ export default function FormularioPage() {
   const steps = [
     <ParticipantForm key="participante" />,
     <EmoCardsSection key="emocards" />,
-    <StepPlaceholder key="sus" name="SUS" />,
+    <SusSection key="sus" />,
     <StepPlaceholder key="attrakdiff" name="AttrakDiff" />,
     <StepPlaceholder key="journeymap" name="User Journey Map" />,
     <StepPlaceholder key="export" name="Download" />,
