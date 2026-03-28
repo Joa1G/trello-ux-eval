@@ -23,8 +23,16 @@ export default function AttrakDiffSection() {
     >
       <div className="space-y-2">
         <h2 className="text-2xl font-bold text-foreground">AttrakDiff</h2>
+        <div className="rounded-lg bg-indigo-50 px-4 py-3 text-sm text-indigo-800">
+          <p className="font-medium">Sobre este formulário</p>
+          <p className="mt-1 text-indigo-700">
+            O <strong>AttrakDiff</strong> (Hassenzahl et al., 2003) avalia sua percepção do produto em 4 dimensões: qualidade pragmática (usabilidade),
+            qualidade hedônica de identidade e estimulação, e atratividade geral. Para cada par de palavras opostas, selecione o ponto que melhor
+            descreve sua percepção. O ponto central (0) indica uma posição neutra.
+          </p>
+        </div>
         <p className="text-sm text-foreground/50">
-          Para cada par de palavras, selecione o ponto que melhor descreve sua percepção sobre o Trello. O ponto central indica uma posição neutra.
+          Para cada par de palavras, selecione o ponto que melhor descreve sua percepção sobre o Trello.
         </p>
         <p className="text-xs text-foreground/30">
           {answeredCount} de {ATTRAKDIFF_PARES.length} respondidos

@@ -19,9 +19,14 @@ export default function JourneyMapSection() {
     >
       <div className="space-y-2">
         <h2 className="text-2xl font-bold text-foreground">Mapa de Jornada do Usuário</h2>
-        <p className="text-sm text-foreground/50">
-          Para cada tarefa, avalie como foi sua experiência: selecione um sentimento, dê uma nota de 1 a 5 e, se quiser, deixe um comentário.
-        </p>
+        <div className="rounded-lg bg-indigo-50 px-4 py-3 text-sm text-indigo-800">
+          <p className="font-medium">Sobre este formulário</p>
+          <p className="mt-1 text-indigo-700">
+            O <strong>Mapa de Jornada do Usuário</strong> captura sua experiência emocional e qualitativa ao longo das tarefas realizadas.
+            Para cada tarefa, selecione um sentimento, atribua uma nota de 1 a 5 e escreva um breve comentário explicando sua avaliação.
+            Todos os campos são obrigatórios.
+          </p>
+        </div>
       </div>
 
       <div className="space-y-4">

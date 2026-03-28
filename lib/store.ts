@@ -49,6 +49,7 @@ export interface FormState {
   // EmoCards: uma resposta por coleta (T1-T5 + Geral)
   emocards: Partial<Record<ColetaId, EmoCardResponse>>
   emocardsCurrentTask: number // índice 0-5
+  emocardsShowWalkthrough: boolean
 
   // SUS: resposta por item (1-10)
   sus: Partial<Record<number, number>>
@@ -69,6 +70,7 @@ export interface FormState {
 
   setEmoCardResponse: (tarefa: ColetaId, dados: EmoCardResponse) => void
   setEmocardsCurrentTask: (index: number) => void
+  setEmocardsShowWalkthrough: (show: boolean) => void
 
   setSusResponse: (item: number, valor: number) => void
 
@@ -103,7 +105,7 @@ export function isJourneyMapComplete(
 ): boolean {
   return COLETAS_IDS.every((id) => {
     const r = journeymap[id]
-    return r !== undefined && r.sentimento !== '' && r.nota !== null
+    return r !== undefined && r.sentimento !== '' && r.nota !== null && r.comentario.trim() !== ''
   })
 }
 
@@ -144,6 +146,7 @@ const initialState = {
   },
   emocards: {},
   emocardsCurrentTask: 0,
+  emocardsShowWalkthrough: false,
   sus: {},
   attrakdiff: {},
   journeymap: {},
@@ -167,6 +170,7 @@ export const useFormStore = create<FormState>()(
       setEmoCardResponse: (tarefa, dados) =>
         set((s) => ({ emocards: { ...s.emocards, [tarefa]: dados } })),
       setEmocardsCurrentTask: (index) => set({ emocardsCurrentTask: index }),
+      setEmocardsShowWalkthrough: (show) => set({ emocardsShowWalkthrough: show }),
 
       setSusResponse: (item, valor) =>
         set((s) => ({ sus: { ...s.sus, [item]: valor } })),

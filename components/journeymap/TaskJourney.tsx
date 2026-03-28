@@ -98,7 +98,7 @@ export default function TaskJourney({ coletaId, tarefa, isGeral, response, onUpd
       {/* Comentário */}
       <div className="space-y-1">
         <label htmlFor={`journey-comment-${coletaId}`} className="text-sm text-foreground/50">
-          Por quê? Palavra ou frase curta <span className="text-foreground/30">(opcional)</span>
+          Por quê? Palavra ou frase curta <span className="text-red-400">*</span>
         </label>
         <input
           id={`journey-comment-${coletaId}`}

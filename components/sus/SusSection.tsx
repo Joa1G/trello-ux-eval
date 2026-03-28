@@ -23,8 +23,15 @@ export default function SusSection() {
         <h2 className="text-2xl font-bold text-foreground">
           Questionário SUS
         </h2>
+        <div className="rounded-lg bg-indigo-50 px-4 py-3 text-sm text-indigo-800">
+          <p className="font-medium">Sobre este formulário</p>
+          <p className="mt-1 text-indigo-700">
+            O <strong>System Usability Scale</strong> (Brooke, 1996) é um questionário padronizado com 10 afirmações que avalia a usabilidade percebida de um sistema.
+            Algumas afirmações são positivas e outras negativas — isso é intencional. Responda com base na sua experiência real com o Trello.
+          </p>
+        </div>
         <p className="text-sm text-foreground/50">
-          Para cada afirmação abaixo, marque o quanto você concorda ou discorda com base na sua experiência com o Trello.
+          Para cada afirmação abaixo, marque o quanto você concorda ou discorda.
         </p>
         <p className="text-xs text-foreground/30">
           {answeredCount} de {SUS_ITENS.length} respondidos
